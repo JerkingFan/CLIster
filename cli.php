@@ -13,6 +13,7 @@ require __DIR__ . '/src/Commands/MigrateCommand.php';
 require __DIR__ . '/src/Commands/GreetCommand.php';
 require __DIR__ . '/src/Commands/ConfigCommand.php';
 require __DIR__ . '/src/Commands/ServeCommand.php';
+require __DIR__ . '/src/Commands/CacheClearCommand';
 
 // Создаем экземпляр CLI
 $cli = new CLI();
@@ -26,6 +27,7 @@ $cli->register('migrate', new MigrateCommand());
 $cli->register('greet', new GreetCommand());
 $cli->register('config', new ConfigCommand());
 $cli->register('serve', new ServeCommand());
+$cli->register('cachear', new CacheClearCommand());
 
 // Запускаем CLI
 $cli->run();

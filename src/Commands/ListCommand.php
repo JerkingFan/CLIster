@@ -4,7 +4,7 @@ class ListCommand extends Command
 {
     public function execute($arguments)
     {
-        Console::writeLine("Listing arguments:", '34'); // Синий цвет
+        Console::writeLine("Listing arguments:", '34'); 
         foreach ($arguments as $index => $arg) {
             Console::writeLine("$index: $arg");
         }
