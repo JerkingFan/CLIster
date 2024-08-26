@@ -23,5 +23,4 @@ class HelpCommand extends Command
     }
 }
 
-
 ?>
