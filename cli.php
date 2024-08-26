@@ -13,7 +13,7 @@ require __DIR__ . '/src/Commands/MigrateCommand.php';
 require __DIR__ . '/src/Commands/GreetCommand.php';
 require __DIR__ . '/src/Commands/ConfigCommand.php';
 require __DIR__ . '/src/Commands/ServeCommand.php';
-require __DIR__ . '/src/Commands/CacheClearCommand';
+require __DIR__ . '/src/Commands/CacheClearCommand.php';
 
 // Создаем экземпляр CLI
 $cli = new CLI();
