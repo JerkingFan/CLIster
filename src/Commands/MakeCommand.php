@@ -11,7 +11,12 @@ class MakeCommand extends Command
             return;
         }
 
-        $commandFile = __DIR__ . "/Commands/{$name}Command.php";
+        $commandFile = __DIR__ . "/../Commands/{$name}Command.php";
+        $directory = dirname($commandFile);
+
+        if (!file_exists($directory)) {
+            mkdir($directory, 0777, true);
+        }
 
         if (file_exists($commandFile)) {
             echo "Command {$name} already exists.\n";

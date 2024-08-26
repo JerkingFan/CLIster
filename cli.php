@@ -29,3 +29,5 @@ $cli->register('serve', new ServeCommand());
 
 // Запускаем CLI
 $cli->run();
+
+?>

@@ -4,37 +4,36 @@ class CLI
 {
     private $commands = [];
 
-    public function register($commandName, $commandInstance)
+    public function register($name, Command $command)
     {
-        $this->commands[$commandName] = $commandInstance;
+        $this->commands[$name] = $command;
     }
 
     public function run()
     {
         global $argv;
+        array_shift($argv); // Убираем имя скрипта из аргументов
 
-        $commandName = $argv[1] ?? null;
-
-        if ($commandName === null) {
-            $this->printHelp();
+        if (empty($argv)) {
+            echo "No command provided. Use 'help' for a list of commands.\n";
             return;
         }
 
-        if (isset($this->commands[$commandName])) {
-            $command = $this->commands[$commandName];
-            $command->execute(array_slice($argv, 2));
-        } else {
-            echo "Command not found: $commandName\n";
-            $this->printHelp();
+        $commandName = $argv[0];
+        $commandArgs = array_slice($argv, 1);
+
+        if (!isset($this->commands[$commandName])) {
+            echo "Command not found. Use 'help' for a list of commands.\n";
+            return;
         }
+
+        $command = $this->commands[$commandName];
+        $command->execute($commandArgs);
     }
 
-    private function printHelp()
+    public function getRegisteredCommands()
     {
-        echo "Available commands:\n";
-        foreach ($this->commands as $name => $command) {
-            echo "  $name - " . $command->getDescription() . "\n";
-        }
+        return $this->commands;
     }
 }
 
