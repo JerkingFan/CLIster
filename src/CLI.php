@@ -12,8 +12,7 @@ class CLI
     public function run()
     {
         global $argv;
-        array_shift($argv); // Убираем имя скрипта из аргументов
-
+        array_shift($argv); 
         if (empty($argv)) {
             echo "No command provided. Use 'help' for a list of commands.\n";
             return;
