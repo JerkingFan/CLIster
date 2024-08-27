@@ -91,6 +91,13 @@ php cli.php config remove key
 php cli.php serve 127.0.0.1 8000
 ```
 ### Development
+
+#### RoadMap
+
+A road-map page is attached to assign the work vector. Of course, if the framework goes to hell, the issue of restoring it will be resolved first of all. Everyone can add their own options or demonstrate that work on a particular item is being done
+```
+https://trello.com/invite/b/66cdc5a8a55dc4945222ea74/ATTIefc5394d3f1acf00f3a1804dc3305449E4B5DE49/clister
+```
 #### Adding a new command
 1. Create a command file in the src/Commands directory.
 2. Implement the command class by extending Command and implementing the execute and getDescription methods.
